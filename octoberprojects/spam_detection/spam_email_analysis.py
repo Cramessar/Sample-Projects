@@ -15,8 +15,7 @@ import joblib
 from flask import Flask, request, render_template
 
 # Load the dataset (make sure 'spam.csv' is in the same directory)
-df = pd.read_csv('C:/Users/Chris/Documents/GitHub/Sample-Projects/octoberprojects/spam_detection/spam.csv', encoding='latin-1')
-
+df = pd.read_csv('spam.csv', encoding='latin-1')
 
 # Drop unnecessary columns
 df = df[['v1', 'v2']]
