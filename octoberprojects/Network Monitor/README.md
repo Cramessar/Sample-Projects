@@ -16,7 +16,7 @@ To run the application, download the standalone executable from the `dist/` dire
 If you want to build the application yourself, follow these steps:
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-repo/sample-projects.git
+   git clone https://github.com/Cramessar/Sample-Projects/tree/main/octoberprojects/Network%20Monitor
    cd sample-projects
    ```
 
