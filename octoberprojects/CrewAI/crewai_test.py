@@ -3,7 +3,7 @@ import warnings
 warnings.filterwarnings('ignore')
 from crewai import Agent, Task, Crew
 import os
-from api_keys import get_openai_api_key
+from keys import get_openai_api_key
 
 
 openai_api_key = get_openai_api_key()
