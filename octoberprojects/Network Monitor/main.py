@@ -1,6 +1,5 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTabWidget
-from PyQt5.QtCore import QFile, QTextStream
 from ping import PingTab  # Import PingTab class from ping.py
 from ports import PortsTab  # Import PortsTab class from ports.py
 from routes import RoutesTab  # Import RoutesTab class from routes.py
@@ -59,16 +58,8 @@ class NetworkAnalysisApp(QMainWindow):
         elif current_tab == self.path_tab and 'path' in self.tab_states:
             self.path_tab.load_state(self.tab_states['path'])
 
-# Function to apply the stylesheet from styles.css
-def apply_stylesheet(app):
-    file = QFile("styles/styles.css")  # Assuming the CSS file is in a 'styles' folder
-    if file.open(QFile.ReadOnly | QFile.Text):
-        stream = QTextStream(file)
-        app.setStyleSheet(stream.readAll())
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    apply_stylesheet(app)  # Apply the neon stylesheet
     window = NetworkAnalysisApp()
     window.show()
     sys.exit(app.exec_())

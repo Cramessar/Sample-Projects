@@ -1,0 +1,66 @@
+/* Window background color */
+QMainWindow {
+    background-color: #2E3440; /* Dark blue background */
+}
+
+/* Font and color for QLabel (creature names, etc.) */
+QLabel {
+    color: #ECEFF4; /* Light text color */
+    font-size: 30px;
+    font-family: "Arial", sans-serif;
+}
+
+/* Styling for QProgressBar (health bars) */
+QProgressBar {
+    border: 2px solid #4C566A; /* Border color */
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+}
+
+QProgressBar::chunk {
+    background-color: green; /* Default color */
+}
+
+/* Styling for QTextEdit (story display) */
+QTextEdit {
+    background-color: #3B4252; /* Darker background for text area */
+    color: #ECEFF4;  /* Light text */
+    font-size: 30px;
+    font-family: "Courier New", monospace;
+}
+
+/* Button styles */
+QPushButton {
+    background-color: #5E81AC;
+    color: white;
+    font-size: 30px;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+QPushButton:hover {
+    background-color: #81A1C1; /* Lighter on hover */
+}
+
+QPushButton:pressed {
+    background-color: #4C566A; /* Darker when pressed */
+}
+
+/* Lucky Hit banner style */
+QLabel#lucky_hit_banner {
+    font-size: 35px;
+    color: gold;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+}
+/* Styling for level up banner */
+QLabel#level_up_banner {
+    font-size: 35px;
+    color: rgb(0, 251, 255);
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid white;
+}
