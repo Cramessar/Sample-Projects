@@ -1,0 +1,114 @@
+﻿Christopher Ramessar
+(347) 370-8890
+https://www.linkedin.com/in/christopher-ramessar/
+	
+
+	Summary
+Results-driven IT leader with over 8 years of experience managing complex technology infrastructures, leading cross-functional teams, and delivering innovative IT solutions. Proven track record in strategic IT planning, cost optimization, and cybersecurity management. Adept at aligning technology initiatives with business goals to drive operational excellence. Demonstrated success in overseeing budgets, spearheading digital transformation projects, and leading teams to implement cutting-edge solutions that deliver measurable value.
+Experience
+ACCESS SOFTEK, NEW YORK CITY, NY | MAY 2016 – PRESENT
+Network Operations Manager | January 2019 – Present
+* Lead a high-performing team of 7 network engineers, facilitating day-to-day operations with precision to ensure optimal network performance for a diverse user base exceeding 300 clients.
+* Steer the efficient migration of critical applications to a cloud-based infrastructure, achieving a 24% reduction in operating expenditures.
+* Designed a resilient incident management framework, reducing network downtime by a remarkable 37% and guaranteeing seamless and uninterrupted service availability.
+* Partner with the security team to deploy and oversee enhanced security protocols, resulting in a notable 26% decrease in security incidents, fortifying the overall network defense.
+* Introduce and deploy cutting-edge network monitoring tools, amplifying visibility and facilitating proactive resolution of issues.
+* Led the team in regular assessments, fixing network issues for a 63% efficiency boost, and resolved problems to optimize performance, ensuring critical systems operate seamlessly.
+* Developed and managed comprehensive documentation for network configurations, facilitating effortless troubleshooting processes, and ensuring a seamless onboarding experience for new team members.
+Technical Support Specialist | May 2016 – December 2018
+* Provided expert technical support to clients by diagnosing and resolving diverse hardware and software issues, including those of operating systems, networks, and applications, ensuring optimal device performance.
+* Performed client consultations to understand their specific IT needs, delivering customized solutions through upgrades and installations, while providing expert guidance to ensure well-informed technology decisions aligned with their business goals.
+* Strengthen client cybersecurity by implementing protective measures, conducting security assessments, deploying antivirus solutions, and staying ahead of emerging threats to prevent potential risks and vulnerabilities.
+Skills
+Leadership and Management Skills
+1. Team Leadership and Development
+   * Managing cross-functional teams (developers, network engineers, IT support)
+   * Recruitment, training, and mentorship
+   * Conflict resolution and team building
+   * Performance evaluation and goal-setting
+2. Strategic IT Planning
+   * Long-term IT strategy development aligned with business goals
+   * Technology roadmap creation
+   * IT budgeting and financial management
+   * Vendor relationship management (hardware, software, cloud service providers)
+3. Communication and Collaboration
+   * Interdepartmental collaboration with other business units (Finance, HR, Operations)
+   * Reporting to C-suite executives
+   * Translating technical issues to non-technical stakeholders
+4. Change Management
+   * Implementing organizational change (new technologies, migrations)
+   * Stakeholder communication plans
+   * Managing user adoption of new systems and technologies
+5. Risk Management
+   * Identifying, assessing, and mitigating technology-related risks
+   * Managing data privacy and regulatory risks
+   * Disaster recovery and crisis management
+6. Contract and Vendor Management
+   * Negotiating and managing IT contracts
+   * Evaluating vendor performance
+   * Managing outsourced IT services
+	
+
+	
+
+- IT Leadership
+- IT Strategy Development
+- Project Management
+- Infrastructure Management
+- Budgeting & Cost Control
+- Network Architecture
+- Cybersecurity Management
+- Team Leadership & Development
+- Vendor & Stakeholder Management
+- Cloud Solutions & Digital Transformation
+- Risk Management & Compliance
+- Systems Integration
+- Change Management
+
+
+	
+
+
+
+Technologies
+Technical Skills
+1. IT Infrastructure Management
+   * Network infrastructure (LAN, WAN, VPN, VLAN)
+   * Cloud computing (AWS, Azure, Google Cloud)
+   * Routing, switching (Cisco,VNS3)
+   * IP addressing, DNS, DHCP, SD-WAN, MPLS
+   * Network monitoring tools (Wireshark, SolarWinds)
+2. Security and Compliance
+   * Cybersecurity best practices
+   * Firewalls, Intrusion Detection Systems (IDS), Intrusion Prevention Systems (IPS)
+   * Security protocols (SSL, TLS, SSH)
+   * Data encryption and integrity (encryption algorithms, key management)
+   * Risk assessment and mitigation
+3. Software and Application Management
+   * Enterprise Resource Planning (ERP) systems (SAP, Oracle ERP, Microsoft Dynamics)
+   * Database management (SQL, MySQL, MongoDB)
+   * Software Development Life Cycle (SDLC) and DevOps practices
+   * IT Service Management (ITSM) tools (ServiceNow, Jira)
+   * Cloud orchestration tools (Kubernetes, Docker)
+4. Disaster Recovery and Business Continuity
+   * Backup strategies and solutions
+   * Failover clustering
+   * High availability solutions
+   * Incident management
+   * Business continuity planning
+5. Project Management Tools
+   * Agile, Scrum, Kanban methodologies
+6. Enterprise Systems Integration
+   * API integration and management
+   * Microservices architecture
+   * Middleware technologies
+   * Systems orchestration tools
+   * AI and Machine Learning integration in IT
+Additional Relevant Technologies
+1. Monitoring and Automation Tools
+   * Monitoring systems (Nagios, Zabbix)
+   * IT automation (Ansible, Puppet, Chef)
+   * Scripting languages (Python, Bash, PowerShell)
+2. Collaboration Tools
+   * Office 365, Microsoft Teams, Zoom
+   * Agile, Scrum, Kanban methodologies
