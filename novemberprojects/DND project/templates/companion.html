@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Companion Summary</title>
+</head>
+<body>
+    <h1>Your Companion</h1>
+
+    <h2>Race: {{ companion.race }}</h2>
+    <p>{{ companion.race_description }}</p>
+
+    <h2>Class: {{ companion.class }}</h2>
+    <p>{{ companion.class_description.description }}</p>
+
+    <h3>Skills</h3>
+    <ul>
+        {% for skill in companion.class_description.skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Weapons</h3>
+    <ul>
+        {% for weapon in companion.class_description.weapons %}
+            <li>{{ weapon }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Proficiencies</h3>
+    <ul>
+        {% for proficiency in companion.class_description.proficiencies %}
+            <li>{{ proficiency }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Spells</h3>
+    <ul>
+        {% for spell in companion.class_description.spells %}
+            <li>{{ spell }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Backstory</h3>
+    <p>{{ companion.backstory | safe }}</p>
+
+    <form method="POST">
+        <button type="submit">Save Companion</button>
+    </form>
+</body>
+</html>

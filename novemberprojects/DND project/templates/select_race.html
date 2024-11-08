@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Race</title>
+</head>
+<body>
+    <h1>Select Race</h1>
+    <form method="POST">
+        <select id="raceDropdown" name="race">
+            {% for race in races %}
+                <option value="{{ race.index }}">{{ race.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Next</button>
+    </form>
+    <h2>Race Description</h2>
+    <p id="raceDescription">Select a race to see the description.</p>
+
+    <script>
+        document.getElementById("raceDropdown").addEventListener("change", function() {
+            const raceIndex = this.value;
+            fetch(`/race-description/${raceIndex}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("raceDescription").innerText = data.description;
+                });
+        });
+    </script>
+</body>
+</html>

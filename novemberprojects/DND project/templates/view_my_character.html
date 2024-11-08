@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View My Character</title>
+</head>
+<body>
+    <h1>View My Character</h1>
+    {% if character %}
+        <h2>Name: {{ character.name }}</h2>
+        <h3>Race: {{ character.race }}</h3>
+        <h3>Class: {{ character.class }}</h3>
+        <p>{{ character.backstory }}</p>
+    {% else %}
+        <p>You haven't created a character yet.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
