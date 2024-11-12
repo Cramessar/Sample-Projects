@@ -406,7 +406,7 @@ Contributions are welcome! If you would like to contribute to this project, plea
 2. **Clone the Fork**
 
    ```bash
-   git clone https://github.com/your_username/chatbot.git
+   git clone https://github.com/Cramessar/Sample-Projects/tree/main/novemberprojects/chatbot
    ```
 
 3. **Create a Feature Branch**
