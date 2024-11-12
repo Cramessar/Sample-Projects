@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{% block title %}Banking App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <nav>
+      <ul>
+        {% if current_user.is_authenticated %}
+          <li><a href="{{ url_for('main.dashboard') }}">Dashboard</a></li>
+          <li><a href="{{ url_for('main.analysis') }}">Analysis</a></li>
+          <li><a href="{{ url_for('main.spending_summary') }}">Spending Summary</a></li>
+          <li><a href="{{ url_for('main.chatbot') }}">Chatbot</a></li>
+          <li><a href="{{ url_for('main.upload_transactions') }}">Upload Transactions</a></li>
+          <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
+        {% else %}
+          <li><a href="{{ url_for('main.login') }}">Login</a></li>
+          <li><a href="{{ url_for('main.register') }}">Register</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>
