@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Companion</title>
+</head>
+<body>
+    <h2>Create Your Companion</h2>
+    <form action="{{ url_for('create_companion') }}" method="post">
+        <label for="race">Race:</label>
+        <select name="race" required>
+            {% for race in races %}
+                <option value="{{ race.name }}">{{ race.name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="class">Class:</label>
+        <select name="class" required>
+            {% for char_class in classes %}
+                <option value="{{ char_class.name }}">{{ char_class.name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Generate Companion</button>
+    </form>
+</body>
+</html>

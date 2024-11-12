@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Companions</title>
+</head>
+<body>
+    <h1>Your Companions</h1>
+    <ul>
+        {% for companion in companions %}
+            <li>
+                <h2>Name: {{ companion.name }}</h2>
+                <h3>Race: {{ companion.race }}</h3>
+                <h3>Class: {{ companion.class }}</h3>
+                <p>{{ companion.backstory }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('options') }}">Back to Options</a>
+</body>
+</html>

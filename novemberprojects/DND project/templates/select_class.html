@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Class</title>
+</head>
+<body>
+    <h1>Select Class</h1>
+    <form method="POST">
+        <select id="classDropdown" name="class">
+            {% for class in classes %}
+                <option value="{{ class.index }}">{{ class.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Next</button>
+    </form>
+    
+    <h2>Class Information</h2>
+    <p id="classDescription">Select a class to see the description.</p>
+    <h3>Skills</h3>
+    <ul id="skillsList"></ul>
+    <h3>Weapons</h3>
+    <ul id="weaponsList"></ul>
+    <h3>Proficiencies</h3>
+    <ul id="proficienciesList"></ul>
+    <h3>Spells</h3>
+    <ul id="spellsList"></ul>
+
+    <script>
+        document.getElementById("classDropdown").addEventListener("change", function() {
+            const classIndex = this.value;
+            fetch(`/class-description/${classIndex}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("classDescription").innerText = data.description;
+
+                    // Populate Skills
+                    const skillsList = document.getElementById("skillsList");
+                    skillsList.innerHTML = "";
+                    data.skills.forEach(skill => {
+                        const li = document.createElement("li");
+                        li.innerText = skill;
+                        skillsList.appendChild(li);
+                    });
+
+                    // Populate Weapons
+                    const weaponsList = document.getElementById("weaponsList");
+                    weaponsList.innerHTML = "";
+                    data.weapons.forEach(weapon => {
+                        const li = document.createElement("li");
+                        li.innerText = weapon;
+                        weaponsList.appendChild(li);
+                    });
+
+                    // Populate Proficiencies
+                    const proficienciesList = document.getElementById("proficienciesList");
+                    proficienciesList.innerHTML = "";
+                    data.proficiencies.forEach(proficiency => {
+                        const li = document.createElement("li");
+                        li.innerText = proficiency;
+                        proficienciesList.appendChild(li);
+                    });
+
+                    // Populate Spells
+                    const spellsList = document.getElementById("spellsList");
+                    spellsList.innerHTML = "";
+                    data.spells.forEach(spell => {
+                        const li = document.createElement("li");
+                        li.innerText = spell;
+                        spellsList.appendChild(li);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
