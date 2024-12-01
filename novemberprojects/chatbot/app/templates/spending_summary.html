@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Spending Summary{% endblock %}
+
+{% block content %}
+<h1>Spending Summary</h1>
+<canvas id="spendingChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('spendingChart').getContext('2d');
+    var spendingData = {
+        labels: [
+            {% for item in spending %}
+                '{{ item.category }}',
+            {% endfor %}
+        ],
+        datasets: [{
+            data: [
+                {% for item in spending %}
+                    {{ item.total }},
+                {% endfor %}
+            ],
+            backgroundColor: [
+                // Add colors as needed
+                'rgba(255, 99, 132, 0.2)',
+                // ...
+            ],
+            borderColor: [
+                // Add border colors as needed
+                'rgba(255,99,132,1)',
+                // ...
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    var spendingChart = new Chart(ctx, {
+        type: 'pie',
+        data: spendingData,
+    });
+</script>
+{% endblock %}

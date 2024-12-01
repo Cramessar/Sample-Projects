@@ -18,13 +18,16 @@ def fetch_dnd_data(endpoint):
         return response.json().get('results', [])
     return []
 
-def get_race_description(race_index):
-    """Fetches the description for a specific race from the D&D API."""
-    response = requests.get(f"{DND_API_URL}/races/{race_index}")
+def get_race_description(race_name):
+    """Fetches detailed information for a specific race from the D&D API."""
+    response = requests.get(f"{DND_API_URL}/races/{race_name.lower()}")
     if response.status_code == 200:
         data = response.json()
-        return data.get("alignment", "") + " " + data.get("age", "") + " " + data.get("size_description", "")
-    return "No description available."
+        return {
+            "description": data.get("alignment", "") + " " + data.get("age", "") + " " + data.get("size_description", ""),
+            "name": data.get("name", "")
+        }
+    return {"description": "No description available.", "name": race_name.title()}
 
 def get_class_description(class_name):
     """Fetches detailed information for a specific class from the D&D API."""
@@ -55,14 +58,16 @@ def get_class_description(class_name):
             "skills": skills,
             "weapons": weapons,
             "proficiencies": proficiencies,
-            "spells": spells
+            "spells": spells,
+            "name": data.get("name", class_name.title())
         }
     return {
         "description": "No description available.",
         "skills": [],
         "weapons": [],
         "proficiencies": [],
-        "spells": []
+        "spells": [],
+        "name": class_name.title()
     }
 
 @app.route('/')
@@ -107,17 +112,17 @@ def user_character():
     race = request.args.get("race", "").lower()
     character_class = request.args.get("character_class", "").lower()
 
-    race_description = get_race_description(race) if race else "No race selected."
-    class_description = get_class_description(character_class) if character_class else "No class selected."
+    race_description = get_race_description(race)
+    class_description = get_class_description(character_class)
 
     # Generate backstory from Crew.ai for the custom character
     backstory = generate_companion_backstory(race, character_class)
     
     global user_character
     user_character.update({
-        "race": race.title(),
-        "class": character_class.title(),
-        "race_description": race_description,
+        "race": race_description["name"],
+        "class": class_description["name"],
+        "race_description": race_description["description"],
         "class_description": class_description,
         "backstory": backstory
     })
@@ -134,14 +139,8 @@ def companion():
     race = request.args.get("race", "").lower()
     character_class = request.args.get("character_class", "").lower()
 
-    race_description = get_race_description(race) if race else "No race selected."
-    class_description = get_class_description(character_class) if character_class else {
-        "description": "No class selected.",
-        "skills": [],
-        "weapons": [],
-        "proficiencies": [],
-        "spells": []
-    }
+    race_description = get_race_description(race)
+    class_description = get_class_description(character_class)
 
     # Generate complete backstory from Crew.ai
     backstory = generate_companion_backstory(race, character_class)
@@ -155,9 +154,9 @@ def companion():
     # Package data for the companion
     companion_data = {
         "name": name,
-        "race": race.title(),
-        "class": character_class.title(),
-        "race_description": race_description,
+        "race": race_description["name"],
+        "class": class_description["name"],
+        "race_description": race_description["description"],
         "class_description": class_description,
         "backstory": backstory
     }

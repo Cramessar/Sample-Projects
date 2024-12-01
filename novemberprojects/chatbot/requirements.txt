@@ -1,0 +1,8 @@
+Flask
+Flask-Login
+Flask-WTF
+Flask-Bootstrap
+Flask-SQLAlchemy
+openai==0.28.0
+Werkzeug
+WTForms

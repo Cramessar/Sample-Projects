@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Financial Planner Chatbot{% endblock %}
+
+{% block content %}
+<h1>Financial Planner Chatbot</h1>
+
+<form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.user_input.label }}<br>
+    {{ form.user_input(rows=4, cols=50) }}<br><br>
+    {{ form.submit() }}
+</form>
+
+{% if messages %}
+    <h2>Conversation History:</h2>
+    <div class="chat-history">
+        {% for message in messages %}
+            {% if message.role == 'user' %}
+                <p><strong>You:</strong> {{ message.content }}</p>
+            {% elif message.role == 'assistant' %}
+                <p><strong>Chatbot:</strong> {{ message.content }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <a href="{{ url_for('main.reset_chat') }}">Reset Conversation</a>
+{% endif %}
+{% endblock %}
