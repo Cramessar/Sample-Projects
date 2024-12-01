@@ -26,33 +26,30 @@ def get_race_description(race_index):
         return data.get("alignment", "") + " " + data.get("age", "") + " " + data.get("size_description", "")
     return "No description available."
 
-def get_class_description(class_index):
-    """Fetches detailed information for a specific class from the D&D API, including skills, weapons, spells, and proficiencies."""
-    response = requests.get(f"{DND_API_URL}/classes/{class_index}")
+def get_class_description(class_name):
+    """Fetches detailed information for a specific class from the D&D API."""
+    response = requests.get(f"{DND_API_URL}/classes/{class_name.lower()}")
     if response.status_code == 200:
         data = response.json()
         
-        # Description
+        # Extract specific details
         description = data.get("desc", ["No description available."])[0]
         
-        # Skills
+        # Skills, Weapons, Proficiencies, and Spells (where available)
         skills = [proficiency['name'] for proficiency in data.get("proficiencies", []) if 'Skill:' in proficiency['name']]
-        
-        # Weapons
         weapons = [proficiency['name'] for proficiency in data.get("proficiencies", []) if 'Weapon:' in proficiency['name']]
-        
-        # Proficiencies (other)
         proficiencies = [proficiency['name'] for proficiency in data.get("proficiencies", []) if 'Skill:' not in proficiency['name'] and 'Weapon:' not in proficiency['name']]
         
-        # Spells (if available)
+        # Check for spellcasting and retrieve spell details if available
         spells = []
-        if data.get("spellcasting"):
+        if "spellcasting" in data:
             spellcasting_url = data["spellcasting"]["url"]
             spell_response = requests.get(f"{DND_API_URL}{spellcasting_url}")
             if spell_response.status_code == 200:
                 spell_data = spell_response.json()
                 spells = [spell['name'] for spell in spell_data.get("spells", [])]
         
+        # Return class details as a dictionary
         return {
             "description": description,
             "skills": skills,
